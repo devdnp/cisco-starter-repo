@@ -1,24 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Banner from './cmpnts/Banner';
+import Header from './cmpnts/Header';
+import Home from './cmpnts/Home';
+import Opt1 from './cmpnts/opt1';
+import Opt2 from './cmpnts/opt2';
+import Opt3 from './cmpnts/opt3';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      
+      <Banner/>
+      
+      
+      <BrowserRouter>
+      <Routes>
+      
+      <Route path="/" element={<Header />} >
+
+      <Route index element={<Home />} />
+      <Route path="/opt1" element={<Opt1 />} />
+      <Route path='/opt2' element={<Opt2 />} />
+      <Route path='/opt3' element={<Opt3 />} />
+
+   </Route>
+   </Routes>
+   </BrowserRouter>
+      
+     
+     
+     
     </div>
+    
   );
 }
 
